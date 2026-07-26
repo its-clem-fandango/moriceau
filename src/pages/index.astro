@@ -7,7 +7,7 @@ import "../styles/global.css";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>Juneau - web and mobile development agency</title>
   </head>
@@ -30,7 +30,12 @@ import "../styles/global.css";
     </nav>
 
     <header>
-      <h1>I can make you a website</h1>
+		<div>
+		<h1>I can make you a website</h1>
+		<p>or join your team. You choose.</p>
+		</div>
+
+		<div class="hero-art">art goes here</div>
     </header>
 
     <main>
@@ -54,5 +59,42 @@ import "../styles/global.css";
     <footer>
       <p>2026 Juneau</p>
     </footer>
+
+	<style>
+		nav {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1.125rem 2rem;
+			background: var(--paper);
+			border-bottom: 3px solid var(--ink);
+		}
+
+		nav ul {
+			display: flex;
+			gap: 1.75rem;
+			list-style: none;
+		}
+
+		header {
+			display: grid;
+			grid-template-columns: 1.1fr 0.9fr;
+			align-items: center;
+			gap: 2rem;
+			min-height: 100svh;
+			padding: 3rem;
+		}
+
+		@media (max-width: 56rem) {
+			header {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		.hero-art {
+			min-height: 18rem;
+			border: 3px dashed var(--ink)
+		}
+	</style>
   </body>
 </html>
